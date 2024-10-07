@@ -20,38 +20,38 @@ import AppBookingFastForm from '../unirider/shared/components/app-booking-fast-f
 import BuscarMaps from '../unirider/shared/pages/buscarMaps.vue';
 
 const routes = [
-    { path: '/', component: LoginUser },
+    { path: '/', redirect: '/home' }, // Redirigir al home
     { path: '/create', component: RegisterUser },
     { path: '/verify', component: ChooseUser },
-    { path: '/home', name: 'Home', component: Home },
-    { path: '/main', name:'main', component: ToolbarComponent },
-    { path: '/maps', component: MapsPageDriver},
+    { path: '/home', name: 'Home', component: Home }, // Página principal
+    { path: '/main', name: 'main', component: ToolbarComponent },
+    { path: '/maps', component: MapsPageDriver },
+    { path: '/login', component: LoginUser }, // Ruta opcional para login
     // otras rutas...
     {
         path: '/qualify/:tripId/:driverId',
         name: 'Qualify',
         component: QualifyCard
-    }   ,
+    },
 
-
-    { path: '/mapsDriver', component: MapsPageDriver},
-    { path: '/confirm', component: confirmation},
-    { path: '/confirmPassenger', component: confirmationPassenger},
-    { path: '/chat', component: ChatUser},
+    { path: '/mapsDriver', component: MapsPageDriver },
+    { path: '/confirm', component: confirmation },
+    { path: '/confirmPassenger', component: confirmationPassenger },
+    { path: '/chat', component: ChatUser },
     { path: '/qualify', component: QualifyCard },
     { path: '/services', component: UniRiderServices },
-    { path: '/plans', component: SubscriptionCards},
-    { path: '/record', component: RecordView},
-    { path: '/OtherMethodpayment', component: OtherPaymentMethodComponent},
-    {path: '/new-card', component: NewCard },
-    {path: '/profile', component: ProfileUser },
-    {path: '/reservations', component: AppBookingFastForm}
+    { path: '/plans', component: SubscriptionCards },
+    { path: '/record', component: RecordView },
+    { path: '/OtherMethodpayment', component: OtherPaymentMethodComponent },
+    { path: '/new-card', component: NewCard },
+    { path: '/profile', component: ProfileUser },
+    { path: '/reservations', component: AppBookingFastForm }
 
-]
+];
 
 const router = createRouter({
     history: createWebHistory(),
     routes
-})
+});
 
-export default router
+export default router;
